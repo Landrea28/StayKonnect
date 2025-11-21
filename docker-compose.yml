@@ -1,0 +1,63 @@
+# Docker Compose para StayKonnect Backend
+# Incluye PostgreSQL y pgAdmin para gestión de BD
+
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: staykonnect-postgres
+    environment:
+      POSTGRES_DB: staykonnect_dev
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - staykonnect-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # pgAdmin - Administrador de PostgreSQL
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: staykonnect-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@staykonnect.com
+      PGADMIN_DEFAULT_PASSWORD: admin123
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    networks:
+      - staykonnect-network
+    depends_on:
+      - postgres
+
+  # MailHog - Servidor SMTP de prueba
+  mailhog:
+    image: mailhog/mailhog:latest
+    container_name: staykonnect-mailhog
+    ports:
+      - "1025:1025"  # Puerto SMTP
+      - "8025:8025"  # Interfaz web
+    networks:
+      - staykonnect-network
+
+volumes:
+  postgres_data:
+    driver: local
+  pgadmin_data:
+    driver: local
+
+networks:
+  staykonnect-network:
+    driver: bridge
