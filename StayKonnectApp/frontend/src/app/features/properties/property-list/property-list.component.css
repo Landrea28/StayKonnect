@@ -1,0 +1,38 @@
+.container {
+    padding: 20px;
+}
+
+.property-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.property-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}
+
+.card-subtitle {
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #007bff;
+}

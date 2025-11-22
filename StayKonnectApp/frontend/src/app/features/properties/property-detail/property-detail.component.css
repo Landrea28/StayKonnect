@@ -1,0 +1,54 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.property-header {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.location {
+    color: #666;
+    font-size: 1.1em;
+}
+
+.property-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+}
+
+.booking-sidebar .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    position: sticky;
+    top: 20px;
+}
+
+.price-tag {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.price-tag span {
+    font-size: 0.6em;
+    font-weight: normal;
+    color: #666;
+}
+
+.btn-block {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+}
+
+@media (max-width: 768px) {
+    .property-content {
+        grid-template-columns: 1fr;
+    }
+}

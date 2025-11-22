@@ -1,0 +1,32 @@
+<div class="home-container">
+  <div class="hero">
+    <h1>Welcome to StayKonnect</h1>
+    <p>Find your perfect stay or list your property.</p>
+    
+    <div class="search-bar">
+      <form (ngSubmit)="onSearch()" class="search-form">
+        <div class="form-group">
+          <input type="text" [(ngModel)]="searchCity" name="city" placeholder="Where are you going?" class="form-control">
+        </div>
+        <div class="form-group">
+          <input type="number" [(ngModel)]="searchGuests" name="guests" placeholder="Guests" class="form-control" min="1">
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="featured-section">
+    <h2>Featured Properties</h2>
+    <div class="property-grid">
+      <div *ngFor="let property of featuredProperties" class="property-card">
+        <div class="card-body">
+          <h5 class="card-title">{{ property.title }}</h5>
+          <p class="card-text">{{ property.description | slice:0:100 }}...</p>
+          <p class="price">${{ property.pricePerNight }} / night</p>
+          <a [routerLink]="['/properties', property.id]" class="btn btn-outline-primary">View Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

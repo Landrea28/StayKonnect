@@ -1,0 +1,39 @@
+<div class="container" *ngIf="property">
+  <div class="property-header">
+    <h1>{{ property.title }}</h1>
+    <p class="location">{{ property.address }}, {{ property.city }}, {{ property.country }}</p>
+  </div>
+
+  <div class="property-content">
+    <div class="main-info">
+      <p class="description">{{ property.description }}</p>
+      
+      <div class="details-grid">
+        <div class="detail-item">
+          <strong>Price:</strong> ${{ property.pricePerNight }} / night
+        </div>
+        <!-- Add more details here if available in model -->
+      </div>
+    </div>
+
+    <div class="booking-sidebar">
+      <div class="card">
+        <div class="card-body">
+          <h3>Book this place</h3>
+          <p class="price-tag">${{ property.pricePerNight }} <span>/ night</span></p>
+          <button class="btn btn-primary btn-block">Check Availability</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="loading" class="text-center mt-5">
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<div *ngIf="!loading && !property" class="alert alert-warning mt-5">
+  Property not found.
+</div>

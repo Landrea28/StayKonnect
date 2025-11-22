@@ -1,0 +1,31 @@
+<div class="app-container">
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a routerLink="/">StayKonnect</a>
+      </div>
+      <div class="nav-links">
+        <a routerLink="/properties" routerLinkActive="active">Properties</a>
+        
+        <ng-container *ngIf="currentUser; else loggedOut">
+          <a *ngIf="currentUser.role === 'HOST'" routerLink="/properties/add" routerLinkActive="active">List Property</a>
+          <span class="welcome-text">Welcome, {{currentUser.email}}</span>
+          <a (click)="logout()" class="btn-logout">Logout</a>
+        </ng-container>
+        
+        <ng-template #loggedOut>
+          <a routerLink="/login" routerLinkActive="active">Login</a>
+          <a routerLink="/register" routerLinkActive="active">Register</a>
+        </ng-template>
+      </div>
+    </nav>
+  </header>
+  
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 StayKonnect</p>
+  </footer>
+</div>

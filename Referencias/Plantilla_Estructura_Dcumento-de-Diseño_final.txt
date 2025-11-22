@@ -1,0 +1,173 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<<StayKonnect>>
+Documento de Diseño del Software
+
+
+
+
+
+Versión: XXXX
+Fecha: XX/XX/XX
+Integrantes: Mariana Alejandra Gordillo Meneses, Julián David Cristancho Niño, Lina Andrea Bello Ballen, Paul Steven Ospina Chico 
+
+
+[Versión del Producto]
+Queda prohibido cualquier tipo de explotación y, en particular, la reproducción, distribución, comunicación pública y/o transformación, total o parcial, por cualquier medio, de este documento sin el previo consentimiento expreso y por escrito de Mariana Alejandra Gordillo Meneses. Julián David Cristancho Niño, Lina Andrea Bello Ballen y Paul Steven Ospina Chico.
+
+CONTROL DE VERSIONES DEL DOCUMENTO
+
+VersiónCausa del CambioResponsable del CambioFecha del Cambio1.0Versión inicial1.1Continuación Versión Inicial
+GENERALIDADES
+StayKonnect - Plataforma de alojamiento entre particulares
+
+StayKonnect es una plataforma tecnológica accesible desde la web y dispositivos móviles, que permite conectar a personas que desean alquilar temporalmente sus propiedades (anfitriones) con personas que buscan un lugar donde hospedarse (viajeros), brindando así una alternativa más flexible y asequible al alojamiento tradicional como hoteles o hostales. 
+
+El objetivo principal de la plataforma es facilitar, gestionar y garantizar una experiencia segura, confiable y personalizada en el proceso de reserva y alquiler de espacios.
+Características principales de la plataforma
+
+Los anfitriones tienen la posibilidad de registrarse en la plataforma, crear un perfil personal, registrar una o varias propiedades, añadir fotografías, definir precios por noche, servicios incluidos (Wi-Fi, cocina, parqueadero, etc.), disponibilidad en el calendario y condiciones de uso (como horarios de entrada y salida, reglas internas, requisitos del huésped, etc.). También pueden gestionar las reservas que reciben, responder preguntas de posibles huéspedes y calificar la experiencia una vez finalizada la estadía.
+
+Por otro lado, los viajeros también deben registrarse y crear un perfil. Luego pueden buscar propiedades usando filtros como ubicación, rango de precios, fechas de viaje, tipo de propiedad, número de personas, y servicios deseados. Una vez que encuentran una opción adecuada, pueden enviar solicitudes de reserva, comunicarse con los anfitriones mediante un sistema de mensajería interna, realizar pagos en línea de forma segura y, al finalizar su estadía, dejar comentarios y valoraciones sobre su experiencia y el alojamiento recibido.
+
+StayKonnect cuenta con un sistema de pagos en línea que garantiza la seguridad tanto del viajero como del anfitrión. El pago se realiza al momento de la reserva, pero los fondos solo se liberan al anfitrión una vez que el huésped ha confirmado su llegada. En caso de inconvenientes, el sistema incluye un módulo de soporte al cliente para gestionar cancelaciones, reembolsos o disputas.
+
+Además, la plataforma dispone de un panel de administración donde los responsables de la empresa pueden monitorear la actividad general del sistema, revisar estadísticas, moderar contenidos inapropiados, gestionar reportes de usuarios, analizar el rendimiento comercial y garantizar el cumplimiento de normativas locales.
+
+Tipos de usuarios y sus necesidades
+
+La plataforma considera diferentes perfiles de usuario, cada uno con requerimientos específicos:
+
+
+Anfitrión (persona que ofrece su propiedad)
+
+* Desea tener control sobre la publicación de su propiedad: fotos, precio, disponibilidad, reglas.
+* Requiere herramientas para gestionar reservas y responder mensajes.
+* Espera recibir pagos seguros y confiables por las reservas realizadas.
+* Necesita acceso a estadísticas de visitas y reservas de sus propiedades.
+* Valora un sistema de reputación que premie a los anfitriones responsables.
+
+Viajero (persona que busca alojamiento)
+
+* Busca una experiencia rápida, fácil y confiable para encontrar y reservar alojamiento.
+* Necesita filtros avanzados para personalizar su búsqueda.
+* Espera recibir confirmaciones inmediatas de sus reservas y notificaciones sobre cambios.
+* Requiere un sistema de pagos seguro y transparente.
+* Valora poder comunicarse con los anfitriones y leer reseñas de otros viajeros.
+
+Administrador de la plataforma
+
+* Supervisa la operación del sistema (usuarios activos, propiedades, transacciones).
+* Requiere herramientas para bloquear cuentas fraudulentas o contenido inapropiado.
+* Debe acceder a reportes analíticos sobre la actividad y el crecimiento de la plataforma.
+* Administra procesos de soporte y resolución de conflictos.
+* Supervisa cumplimiento de políticas legales y fiscales en los países donde opera.
+
+Revise el documento 
+
+Solucion_caso_estudio_v1_Proyecto_Final.xls
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Documento de diseño
+
+
+
+1. Introducción 
+1.1. Propósito
+El propósito de este documento es especificar el diseño del sistema StayKonnect, una plataforma web y móvil para la publicación, búsqueda y reserva de alojamientos entre particulares. Este documento detalla la arquitectura lógica del software, los componentes principales, las clases y sus relaciones, y describe los casos de uso esenciales con sus diagramas de secuencia y de actividad. El objetivo es servir como guía técnica para el desarrollo, pruebas y despliegue del producto, permitiendo la implementación coherente del comportamiento funcional y no funcional acordado.
+1.2. Ámbito 
+StayKonnect permite a tres perfiles principales (Anfitrión, Viajero y Administrador) interactuar en una plataforma que ofrece: registro y autenticación, publicación y gestión de propiedades, búsqueda y filtrado de alojamientos, proceso de reserva con pago seguro, mensajería entre usuarios, gestión de valoraciones y administración/monitoreo por parte del administrador de la plataforma. El alcance cubre desde el registro hasta la finalización de la estancia, incluyendo gestión de disputas y panel administrativo básico. 
+2. Diagrama de paquetes.
+
+3. Descripción de componentes
+2.1. Diagrama de clases
+
+
+2.2. Caso de uso 1: XXXXXX
+	2.2.1. Diagrama de secuencia 
+
+
+	2.2.2. Diagrama de actividad
+
+
+
+
+2.3. Caso de uso 2: XXXXXXX
+	2.3.1. Diagrama de secuencia 
+
+2.3.2. Diagrama de actividad
+
+
+
+
+2.4. Caso de uso 3: 
+	2.4.1. Diagrama de secuencia 
+
+
+	2.4.2. Diagrama de actividad
+
+
+
+
+2.5. Caso de uso 4: 
+	2.5.1. Diagrama de secuencia 
+
+2.5.2. Diagrama de Actividad
+	
+
+2.6. Caso de uso 5: 
+	2.6.1. Diagrama de secuencia 
+
+2.6.2. Diagrama de Actividad
+
+
+2.7. Caso de uso 6: 
+	2.7.1. Diagrama de secuencia 
+
+2.7.2 Diagrama de Actividad
+
+2.8. Caso de uso N: 
+	2.8.1. Diagrama de secuencia 
+
+	2.8.2 Diagrama de Actividad
+
+
+4. Diagramas de Estado (4 diagramas)
+
+
+5. Diagrama de componentes (1 diagrama)
+
+
+
+6. Diagrama de despliegue (1 diagrama)
+
+
+

@@ -49,6 +49,25 @@ mvnw.cmd
 .env.local
 .env.production
 
+### Angular / Node.js ###
+node_modules/
+dist/
+.angular/
+.sass-cache/
+connect.lock
+coverage/
+libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+typings/
+
+### OS Files ###
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
 ### Database ###
 *.db
 *.sqlite
