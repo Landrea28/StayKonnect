@@ -33,4 +33,12 @@ export class PropertyService {
   createProperty(hostId: number, property: Property): Observable<Property> {
       return this.http.post<Property>(`${this.apiUrl}/host/${hostId}`, property);
   }
+
+  getPropertiesByHost(hostId: number): Observable<Property[]> {
+    return this.http.get<Property[]>(`${this.apiUrl}/host/${hostId}`);
+  }
+
+  deleteProperty(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
 }

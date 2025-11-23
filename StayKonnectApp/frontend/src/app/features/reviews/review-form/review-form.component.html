@@ -1,0 +1,38 @@
+<div class="card mb-4 shadow-sm">
+  <div class="card-body">
+    <h5 class="card-title">Write a Review</h5>
+    
+    <form [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label class="form-label">Rating</label>
+        <div class="rating-stars" (mouseleave)="hoverRating = 0">
+          <i *ngFor="let star of [1,2,3,4,5]" 
+             class="bi" 
+             [class.bi-star-fill]="star <= (hoverRating || reviewForm.get('rating')?.value)"
+             [class.bi-star]="star > (hoverRating || reviewForm.get('rating')?.value)"
+             [class.text-warning]="star <= (hoverRating || reviewForm.get('rating')?.value)"
+             (mouseenter)="hoverRating = star"
+             (click)="setRating(star)"
+             style="cursor: pointer; font-size: 1.5rem; margin-right: 5px;">
+          </i>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Comment</label>
+        <textarea class="form-control" formControlName="comment" rows="3" placeholder="Share your experience..."></textarea>
+        <div *ngIf="reviewForm.get('comment')?.touched && reviewForm.get('comment')?.errors?.['minlength']" class="text-danger small">
+          Comment must be at least 10 characters.
+        </div>
+      </div>
+
+      <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+      <div *ngIf="success" class="alert alert-success">{{ success }}</div>
+
+      <button type="submit" [disabled]="reviewForm.invalid || loading" class="btn btn-primary">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
+        Submit Review
+      </button>
+    </form>
+  </div>
+</div>

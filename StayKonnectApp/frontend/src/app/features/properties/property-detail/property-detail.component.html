@@ -14,14 +14,68 @@
         </div>
         <!-- Add more details here if available in model -->
       </div>
+
+      <hr class="my-4">
+      
+      <!-- DEBUG MARKER -->
+      <div class="alert alert-info">
+        <small>Debug: Reviews Section Loaded. Property ID: {{ property.id }}</small>
+      </div>
+
+      <div *ngIf="currentUser && property.host && currentUser.id !== property.host.id">
+        <app-review-form [propertyId]="property.id!" (reviewSubmitted)="onReviewSubmitted()"></app-review-form>
+      </div>
+
+      <app-review-list [propertyId]="property.id!"></app-review-list>
     </div>
 
     <div class="booking-sidebar">
-      <div class="card">
+      <div class="card shadow-sm mb-3">
         <div class="card-body">
           <h3>Book this place</h3>
-          <p class="price-tag">${{ property.pricePerNight }} <span>/ night</span></p>
-          <button class="btn btn-primary btn-block">Check Availability</button>
+          <p class="price-tag h4 text-primary mb-3">${{ property.pricePerNight }} <span class="text-muted h6">/ night</span></p>
+          
+          <div *ngIf="!currentUser" class="alert alert-info">
+            Please <a routerLink="/login" [queryParams]="{returnUrl: '/properties/' + property.id}">login</a> to book.
+          </div>
+
+          <form *ngIf="currentUser" [formGroup]="bookingForm" (ngSubmit)="onBook()">
+            <div class="mb-3">
+              <label class="form-label">Check-in</label>
+              <input type="date" formControlName="startDate" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Check-out</label>
+              <input type="date" formControlName="endDate" class="form-control">
+            </div>
+
+            <div *ngIf="totalPrice > 0" class="total-price-section mb-3">
+              <hr>
+              <div class="d-flex justify-content-between">
+                <span>Total</span>
+                <strong>${{ totalPrice }}</strong>
+              </div>
+            </div>
+
+            <button [disabled]="bookingForm.invalid || bookingLoading || totalPrice <= 0" class="btn btn-primary w-100 mt-3">
+              <span *ngIf="bookingLoading" class="spinner-border spinner-border-sm me-1"></span>
+              Reserve
+            </button>
+
+            <div *ngIf="bookingError" class="alert alert-danger mt-2">{{ bookingError }}</div>
+            <div *ngIf="bookingSuccess" class="alert alert-success mt-2">Reservation created successfully!</div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Contact Host Button -->
+      <div class="card shadow-sm" *ngIf="currentUser && property.host && currentUser.id !== property.host.id">
+        <div class="card-body text-center">
+          <h5 class="card-title">Have questions?</h5>
+          <p class="card-text text-muted">Contact the host directly.</p>
+          <a [routerLink]="['/messages', property.host.id]" class="btn btn-outline-secondary w-100">
+            <i class="bi bi-chat-dots"></i> Contact Host
+          </a>
         </div>
       </div>
     </div>

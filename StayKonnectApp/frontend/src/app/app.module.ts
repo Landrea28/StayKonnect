@@ -12,6 +12,12 @@ import { RegisterComponent } from './features/auth/register/register.component';
 import { PropertyListComponent } from './features/properties/property-list/property-list.component';
 import { PropertyDetailComponent } from './features/properties/property-detail/property-detail.component';
 import { PropertyFormComponent } from './features/properties/property-form/property-form.component';
+import { MyPropertiesComponent } from './features/properties/my-properties/my-properties.component';
+import { MyReservationsComponent } from './features/reservations/my-reservations/my-reservations.component';
+import { ChatComponent } from './features/messaging/chat/chat.component';
+import { ReviewListComponent } from './features/reviews/review-list/review-list.component';
+import { ReviewFormComponent } from './features/reviews/review-form/review-form.component';
+import { NotificationListComponent } from './shared/components/notification-list/notification-list.component';
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 
 @NgModule({
@@ -22,7 +28,13 @@ import { AuthInterceptor } from './core/interceptors/auth.interceptor';
     RegisterComponent,
     PropertyListComponent,
     PropertyDetailComponent,
-    PropertyFormComponent
+    PropertyFormComponent,
+    MyPropertiesComponent,
+    MyReservationsComponent,
+    ChatComponent,
+    ReviewListComponent,
+    ReviewFormComponent,
+    NotificationListComponent
   ],
   imports: [
     BrowserModule,

@@ -1,27 +1,30 @@
-<div class="container">
-  <h2>All Properties</h2>
+<div class="container py-4">
+  <h2 class="mb-4">All Properties</h2>
   
-  <div *ngIf="loading" class="text-center">
-    <div class="spinner-border" role="status">
-      <span class="sr-only">Loading...</span>
+  <div *ngIf="loading" class="text-center py-5">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
     </div>
   </div>
 
-  <div *ngIf="!loading" class="property-grid">
-    <div *ngFor="let property of properties" class="property-card">
-      <div class="card-body">
-        <h5 class="card-title">{{ property.title }}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">{{ property.city }}, {{ property.country }}</h6>
-        <p class="card-text">{{ property.description | slice:0:150 }}...</p>
-        <div class="d-flex justify-content-between align-items-center">
-          <span class="price">${{ property.pricePerNight }} / night</span>
-          <a [routerLink]="['/properties', property.id]" class="btn btn-primary">View Details</a>
+  <div *ngIf="!loading" class="row">
+    <div *ngFor="let property of properties" class="col-md-4 mb-4">
+      <div class="card h-100 shadow-sm">
+        <img [src]="property.images && property.images.length > 0 ? property.images[0].imageUrl : 'assets/placeholder-house.jpg'" class="card-img-top" alt="{{ property.title }}" style="height: 200px; object-fit: cover;">
+        <div class="card-body">
+          <h5 class="card-title">{{ property.title }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ property.city }}, {{ property.country }}</h6>
+          <p class="card-text">{{ property.description | slice:0:150 }}...</p>
+          <div class="d-flex justify-content-between align-items-center mt-3">
+            <span class="h5 mb-0 text-primary">${{ property.pricePerNight }} / night</span>
+            <a [routerLink]="['/properties', property.id]" class="btn btn-primary">View Details</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
   
   <div *ngIf="!loading && properties.length === 0" class="alert alert-info">
-    No properties found.
+    No properties found matching your criteria.
   </div>
 </div>

@@ -6,6 +6,9 @@ import { RegisterComponent } from './features/auth/register/register.component';
 import { PropertyListComponent } from './features/properties/property-list/property-list.component';
 import { PropertyDetailComponent } from './features/properties/property-detail/property-detail.component';
 import { PropertyFormComponent } from './features/properties/property-form/property-form.component';
+import { MyPropertiesComponent } from './features/properties/my-properties/my-properties.component';
+import { MyReservationsComponent } from './features/reservations/my-reservations/my-reservations.component';
+import { ChatComponent } from './features/messaging/chat/chat.component';
 import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
@@ -14,6 +17,9 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'properties', component: PropertyListComponent },
   { path: 'properties/add', component: PropertyFormComponent, canActivate: [AuthGuard] },
+  { path: 'my-properties', component: MyPropertiesComponent, canActivate: [AuthGuard] },
+  { path: 'my-reservations', component: MyReservationsComponent, canActivate: [AuthGuard] },
+  { path: 'messages/:userId', component: ChatComponent, canActivate: [AuthGuard] },
   { path: 'properties/:id', component: PropertyDetailComponent },
   { path: '**', redirectTo: '' }
 ];

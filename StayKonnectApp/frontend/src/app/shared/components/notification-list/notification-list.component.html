@@ -1,0 +1,41 @@
+<div class="dropdown">
+  <button class="btn btn-link position-relative text-dark" (click)="toggleDropdown()">
+    <i class="bi bi-bell fs-5"></i>
+    <span *ngIf="(unreadCount$ | async) as count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+      {{ count }}
+      <span class="visually-hidden">unread messages</span>
+    </span>
+  </button>
+
+  <div class="dropdown-menu dropdown-menu-end shadow show" *ngIf="isOpen" style="width: 300px; max-height: 400px; overflow-y: auto;">
+    <h6 class="dropdown-header">Notifications</h6>
+    
+    <div *ngIf="(notifications$ | async)?.length === 0" class="dropdown-item text-muted text-center">
+      No notifications
+    </div>
+
+    <a *ngFor="let notification of notifications$ | async" 
+       class="dropdown-item d-flex align-items-start p-2 border-bottom"
+       [class.bg-light]="!notification.isRead"
+       (click)="markAsRead(notification)"
+       style="cursor: pointer;">
+      
+      <div class="me-2 mt-1 text-primary">
+        <i class="bi" [ngClass]="getIcon(notification.type)"></i>
+      </div>
+      
+      <div class="flex-grow-1">
+        <p class="mb-1 small" [class.fw-bold]="!notification.isRead">
+          {{ notification.message }}
+        </p>
+        <small class="text-muted" style="font-size: 0.75rem;">
+          {{ notification.createdAt | date:'short' }}
+        </small>
+      </div>
+      
+      <div *ngIf="!notification.isRead" class="ms-2 mt-2">
+        <span class="badge bg-primary rounded-circle p-1" style="width: 8px; height: 8px;"></span>
+      </div>
+    </a>
+  </div>
+</div>

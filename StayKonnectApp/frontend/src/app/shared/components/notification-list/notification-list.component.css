@@ -1,0 +1,13 @@
+.dropdown-menu {
+    display: block; /* Controlled by *ngIf */
+    right: 0;
+    left: auto;
+}
+
+.dropdown-item {
+    white-space: normal;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+}
