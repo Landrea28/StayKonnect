@@ -36,7 +36,13 @@ public class PropertyService {
     }
 
     public List<Property> searchProperties(String city, String country, BigDecimal minPrice, BigDecimal maxPrice, Integer guests) {
-        return propertyRepository.findProperties(city, country, minPrice, maxPrice, guests);
+        String cityPattern = (city != null && !city.trim().isEmpty()) ? "%" + city.trim().toLowerCase() + "%" : null;
+        String countryPattern = (country != null && !country.trim().isEmpty()) ? "%" + country.trim().toLowerCase() + "%" : null;
+        
+        System.out.println("DEBUG: Service processing: cityPattern='" + cityPattern + "', countryPattern='" + countryPattern + "', guests=" + guests);
+        System.out.println("DEBUG: Executing Repository Query with: city=" + cityPattern + ", country=" + countryPattern + ", guests=" + guests);
+        
+        return propertyRepository.findProperties(cityPattern, countryPattern, minPrice, maxPrice, guests);
     }
 
     @Transactional

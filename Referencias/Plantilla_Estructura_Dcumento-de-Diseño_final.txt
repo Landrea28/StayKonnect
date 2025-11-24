@@ -11,67 +11,80 @@
 
 
 <<StayKonnect>>
-Documento de Diseño del Software
+Documento de Diseï¿½o del Software
 
 
 
 
 
-Versión: XXXX
+Versiï¿½n: XXXX
 Fecha: XX/XX/XX
-Integrantes: Mariana Alejandra Gordillo Meneses, Julián David Cristancho Niño, Lina Andrea Bello Ballen, Paul Steven Ospina Chico 
+Integrantes: Mariana Alejandra Gordillo Meneses, Juliï¿½n David Cristancho Niï¿½o, Lina Andrea Bello Ballen, Paul Steven Ospina Chico 
 
 
-[Versión del Producto]
-Queda prohibido cualquier tipo de explotación y, en particular, la reproducción, distribución, comunicación pública y/o transformación, total o parcial, por cualquier medio, de este documento sin el previo consentimiento expreso y por escrito de Mariana Alejandra Gordillo Meneses. Julián David Cristancho Niño, Lina Andrea Bello Ballen y Paul Steven Ospina Chico.
+[Versiï¿½n del Producto]
+Queda prohibido cualquier tipo de explotaciï¿½n y, en particular, la reproducciï¿½n, distribuciï¿½n, comunicaciï¿½n pï¿½blica y/o transformaciï¿½n, total o parcial, por cualquier medio, de este documento sin el previo consentimiento expreso y por escrito de Mariana Alejandra Gordillo Meneses. Juliï¿½n David Cristancho Niï¿½o, Lina Andrea Bello Ballen y Paul Steven Ospina Chico.
+
 
 CONTROL DE VERSIONES DEL DOCUMENTO
 
-VersiónCausa del CambioResponsable del CambioFecha del Cambio1.0Versión inicial1.1Continuación Versión Inicial
+Versiï¿½n
+Causa del Cambio
+Responsable del Cambio
+Fecha del Cambio
+1.0
+Versiï¿½n inicial
+
+
+1.1
+Continuaciï¿½n Versiï¿½n Inicial
+
+
+
 GENERALIDADES
 StayKonnect - Plataforma de alojamiento entre particulares
 
-StayKonnect es una plataforma tecnológica accesible desde la web y dispositivos móviles, que permite conectar a personas que desean alquilar temporalmente sus propiedades (anfitriones) con personas que buscan un lugar donde hospedarse (viajeros), brindando así una alternativa más flexible y asequible al alojamiento tradicional como hoteles o hostales. 
+StayKonnect es una plataforma tecnolï¿½gica accesible desde la web, que permite conectar a personas que desean alquilar temporalmente sus propiedades (anfitriones) con personas que buscan un lugar donde hospedarse (viajeros), brindando asï¿½ una alternativa mï¿½s flexible y asequible al alojamiento tradicional como hoteles o hostales. 
 
 El objetivo principal de la plataforma es facilitar, gestionar y garantizar una experiencia segura, confiable y personalizada en el proceso de reserva y alquiler de espacios.
-Características principales de la plataforma
+Caracterï¿½sticas principales de la plataforma
 
-Los anfitriones tienen la posibilidad de registrarse en la plataforma, crear un perfil personal, registrar una o varias propiedades, añadir fotografías, definir precios por noche, servicios incluidos (Wi-Fi, cocina, parqueadero, etc.), disponibilidad en el calendario y condiciones de uso (como horarios de entrada y salida, reglas internas, requisitos del huésped, etc.). También pueden gestionar las reservas que reciben, responder preguntas de posibles huéspedes y calificar la experiencia una vez finalizada la estadía.
+Los anfitriones tienen la posibilidad de registrarse en la plataforma, crear un perfil personal, registrar una o varias propiedades, aï¿½adir fotografï¿½as, definir precios por noche, servicios incluidos (Wi-Fi, cocina, parqueadero, etc.), disponibilidad en el calendario y condiciones de uso (como horarios de entrada y salida, reglas internas, requisitos del huï¿½sped, etc.). Tambiï¿½n pueden gestionar las reservas que reciben, responder preguntas de posibles huï¿½spedes y calificar la experiencia una vez finalizada la estadï¿½a.
 
-Por otro lado, los viajeros también deben registrarse y crear un perfil. Luego pueden buscar propiedades usando filtros como ubicación, rango de precios, fechas de viaje, tipo de propiedad, número de personas, y servicios deseados. Una vez que encuentran una opción adecuada, pueden enviar solicitudes de reserva, comunicarse con los anfitriones mediante un sistema de mensajería interna, realizar pagos en línea de forma segura y, al finalizar su estadía, dejar comentarios y valoraciones sobre su experiencia y el alojamiento recibido.
+Por otro lado, los viajeros tambiï¿½n deben registrarse y crear un perfil. Luego pueden buscar propiedades usando filtros como ubicaciï¿½n, rango de precios, fechas de viaje, tipo de propiedad, nï¿½mero de personas, y servicios deseados. Una vez que encuentran una opciï¿½n adecuada, pueden enviar solicitudes de reserva, comunicarse con los anfitriones mediante un sistema de mensajerï¿½a interna, realizar pagos en lï¿½nea de forma segura y, al finalizar su estadï¿½a, dejar comentarios y valoraciones sobre su experiencia y el alojamiento recibido.
 
-StayKonnect cuenta con un sistema de pagos en línea que garantiza la seguridad tanto del viajero como del anfitrión. El pago se realiza al momento de la reserva, pero los fondos solo se liberan al anfitrión una vez que el huésped ha confirmado su llegada. En caso de inconvenientes, el sistema incluye un módulo de soporte al cliente para gestionar cancelaciones, reembolsos o disputas.
+StayKonnect cuenta con un sistema de pagos en lï¿½nea que garantiza la seguridad tanto del viajero como del anfitriï¿½n. El pago se realiza al momento de la reserva, pero los fondos solo se liberan al anfitriï¿½n una vez que el huï¿½sped ha confirmado su llegada. En caso de inconvenientes, el sistema incluye un mï¿½dulo de soporte al cliente para gestionar cancelaciones, reembolsos o disputas.
 
-Además, la plataforma dispone de un panel de administración donde los responsables de la empresa pueden monitorear la actividad general del sistema, revisar estadísticas, moderar contenidos inapropiados, gestionar reportes de usuarios, analizar el rendimiento comercial y garantizar el cumplimiento de normativas locales.
+Ademï¿½s, la plataforma dispone de un panel de administraciï¿½n donde los responsables de la empresa pueden monitorear la actividad general del sistema, revisar estadï¿½sticas, moderar contenidos inapropiados, gestionar reportes de usuarios, analizar el rendimiento comercial y garantizar el cumplimiento de normativas locales.
 
 Tipos de usuarios y sus necesidades
 
-La plataforma considera diferentes perfiles de usuario, cada uno con requerimientos específicos:
+La plataforma considera diferentes perfiles de usuario, cada uno con requerimientos especï¿½ficos:
 
 
-Anfitrión (persona que ofrece su propiedad)
+Anfitriï¿½n (persona que ofrece su propiedad)
 
-* Desea tener control sobre la publicación de su propiedad: fotos, precio, disponibilidad, reglas.
+* Desea tener control sobre la publicaciï¿½n de su propiedad: fotos, precio, disponibilidad, reglas.
 * Requiere herramientas para gestionar reservas y responder mensajes.
 * Espera recibir pagos seguros y confiables por las reservas realizadas.
-* Necesita acceso a estadísticas de visitas y reservas de sus propiedades.
-* Valora un sistema de reputación que premie a los anfitriones responsables.
+* Necesita acceso a estadï¿½sticas de visitas y reservas de sus propiedades.
+* Valora un sistema de reputaciï¿½n que premie a los anfitriones responsables.
 
 Viajero (persona que busca alojamiento)
 
-* Busca una experiencia rápida, fácil y confiable para encontrar y reservar alojamiento.
-* Necesita filtros avanzados para personalizar su búsqueda.
+* Busca una experiencia rï¿½pida, fï¿½cil y confiable para encontrar y reservar alojamiento.
+* Necesita filtros avanzados para personalizar su bï¿½squeda.
 * Espera recibir confirmaciones inmediatas de sus reservas y notificaciones sobre cambios.
 * Requiere un sistema de pagos seguro y transparente.
-* Valora poder comunicarse con los anfitriones y leer reseñas de otros viajeros.
+* Valora poder comunicarse con los anfitriones y leer reseï¿½as de otros viajeros.
 
 Administrador de la plataforma
 
-* Supervisa la operación del sistema (usuarios activos, propiedades, transacciones).
+* Supervisa la operaciï¿½n del sistema (usuarios activos, propiedades, transacciones).
 * Requiere herramientas para bloquear cuentas fraudulentas o contenido inapropiado.
-* Debe acceder a reportes analíticos sobre la actividad y el crecimiento de la plataforma.
-* Administra procesos de soporte y resolución de conflictos.
-* Supervisa cumplimiento de políticas legales y fiscales en los países donde opera.
+* Debe acceder a reportes analï¿½ticos sobre la actividad y el crecimiento de la plataforma.
+* Administra procesos de soporte y resoluciï¿½n de conflictos.
+* Supervisa cumplimiento de polï¿½ticas legales y fiscales en los paï¿½ses donde opera.
 
 Revise el documento 
 
@@ -96,18 +109,18 @@ Solucion_caso_estudio_v1_Proyecto_Final.xls
 
 
 
-Documento de diseño
+Documento de diseï¿½o
 
 
 
-1. Introducción 
-1.1. Propósito
-El propósito de este documento es especificar el diseño del sistema StayKonnect, una plataforma web y móvil para la publicación, búsqueda y reserva de alojamientos entre particulares. Este documento detalla la arquitectura lógica del software, los componentes principales, las clases y sus relaciones, y describe los casos de uso esenciales con sus diagramas de secuencia y de actividad. El objetivo es servir como guía técnica para el desarrollo, pruebas y despliegue del producto, permitiendo la implementación coherente del comportamiento funcional y no funcional acordado.
-1.2. Ámbito 
-StayKonnect permite a tres perfiles principales (Anfitrión, Viajero y Administrador) interactuar en una plataforma que ofrece: registro y autenticación, publicación y gestión de propiedades, búsqueda y filtrado de alojamientos, proceso de reserva con pago seguro, mensajería entre usuarios, gestión de valoraciones y administración/monitoreo por parte del administrador de la plataforma. El alcance cubre desde el registro hasta la finalización de la estancia, incluyendo gestión de disputas y panel administrativo básico. 
+1. Introducciï¿½n 
+1.1. Propï¿½sito
+El propï¿½sito de este documento es especificar el diseï¿½o del sistema StayKonnect, una plataforma web y mï¿½vil para la publicaciï¿½n, bï¿½squeda y reserva de alojamientos entre particulares. Este documento detalla la arquitectura lï¿½gica del software, los componentes principales, las clases y sus relaciones, y describe los casos de uso esenciales con sus diagramas de secuencia y de actividad. El objetivo es servir como guï¿½a tï¿½cnica para el desarrollo, pruebas y despliegue del producto, permitiendo la implementaciï¿½n coherente del comportamiento funcional y no funcional acordado.
+1.2. ï¿½mbito 
+StayKonnect permite a tres perfiles principales (Anfitriï¿½n, Viajero y Administrador) interactuar en una plataforma que ofrece: registro y autenticaciï¿½n, publicaciï¿½n y gestiï¿½n de propiedades, bï¿½squeda y filtrado de alojamientos, proceso de reserva con pago seguro, mensajerï¿½a entre usuarios, gestiï¿½n de valoraciones y administraciï¿½n/monitoreo por parte del administrador de la plataforma. El alcance cubre desde el registro hasta la finalizaciï¿½n de la estancia, incluyendo gestiï¿½n de disputas y panel administrativo bï¿½sico. 
 2. Diagrama de paquetes.
 
-3. Descripción de componentes
+3. Descripciï¿½n de componentes
 2.1. Diagrama de clases
 
 

@@ -20,6 +20,7 @@ export class PropertyService {
   }
 
   searchProperties(city?: string, country?: string, minPrice?: number, maxPrice?: number, guests?: number): Observable<Property[]> {
+    console.log('DEBUG: PropertyService searchProperties called with:', { city, country, minPrice, maxPrice, guests });
     let params = new HttpParams();
     if (city) params = params.set('city', city);
     if (country) params = params.set('country', country);
@@ -27,6 +28,7 @@ export class PropertyService {
     if (maxPrice) params = params.set('maxPrice', maxPrice);
     if (guests) params = params.set('guests', guests);
 
+    console.log('DEBUG: API Request to:', `${this.apiUrl}/search`, 'with params:', params.toString());
     return this.http.get<Property[]>(`${this.apiUrl}/search`, { params });
   }
 

@@ -39,7 +39,15 @@ public class PropertyController {
             @RequestParam(required = false) BigDecimal minPrice,
             @RequestParam(required = false) BigDecimal maxPrice,
             @RequestParam(required = false) Integer guests) {
-        return propertyService.searchProperties(city, country, minPrice, maxPrice, guests);
+        System.out.println("DEBUG: --- CONTROLLER SEARCH START ---");
+        System.out.println("DEBUG: Params received: city='" + city + "', country='" + country + "', guests=" + guests);
+        
+        List<Property> results = propertyService.searchProperties(city, country, minPrice, maxPrice, guests);
+        
+        System.out.println("DEBUG: Controller found " + results.size() + " properties");
+        results.forEach(p -> System.out.println("DEBUG: - Property: " + p.getTitle() + " (City: " + p.getCity() + ", Country: " + p.getCountry() + ")"));
+        System.out.println("DEBUG: --- CONTROLLER SEARCH END ---");
+        return results;
     }
 
     @PostMapping("/host/{hostId}")
