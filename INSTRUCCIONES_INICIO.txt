@@ -1,0 +1,24 @@
+INSTRUCCIONES PARA INICIAR EL PROYECTO MANUALMENTE
+
+--- BACKEND ---
+1. Navegar a la carpeta del backend:
+   cd StayKonnectApp/backend
+
+2. NOTA IMPORTANTE:
+   Antes de iniciar, asegúrate de descomentar las configuraciones de conexión a la base de datos local en:
+   StayKonnectApp/backend/src/main/resources/application.properties
+
+3. Iniciar la aplicación Spring Boot:
+   mvn spring-boot:run
+
+--- FRONTEND ---
+1. Navegar a la carpeta del frontend:
+   cd StayKonnectApp/frontend
+
+2. Instalar dependencias (si es la primera vez):
+   npm install
+
+3. Iniciar el servidor de desarrollo:
+   npm start
+
+   (La aplicación estará disponible generalmente en http://localhost:4200)
