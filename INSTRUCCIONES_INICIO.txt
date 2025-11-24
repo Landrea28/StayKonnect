@@ -1,5 +1,12 @@
 INSTRUCCIONES PARA INICIAR EL PROYECTO MANUALMENTE
 
+--- INSTALACIÓN DE MAVEN ---
+MacOS (Homebrew):
+brew install maven
+
+Windows (Chocolatey):
+choco install maven
+
 --- BACKEND ---
 1. Navegar a la carpeta del backend:
    cd StayKonnectApp/backend
