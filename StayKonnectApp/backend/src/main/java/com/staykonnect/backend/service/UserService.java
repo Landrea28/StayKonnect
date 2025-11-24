@@ -36,7 +36,7 @@ public class UserService {
     @Transactional
     public User registerUser(User user) {
         if (userRepository.existsByEmail(user.getEmail())) {
-            throw new RuntimeException("Email already in use");
+            throw new com.staykonnect.backend.exception.BadRequestException("Email already in use");
         }
         // Encrypt password before saving
         user.setPasswordHash(passwordEncoder.encode(user.getPasswordHash()));
