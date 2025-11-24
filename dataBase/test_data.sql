@@ -48,9 +48,9 @@ INSERT INTO reservations (guest_id, property_id, start_date, end_date, total_pri
 (11, 10, '2025-12-30', '2026-01-05', 3000.00, 'CONFIRMED');
 
 -- 4. Notificaciones (Algunas de prueba)
-INSERT INTO notifications (user_id, message, is_read) VALUES
-(2, 'New reservation for your Paris apartment', false),
-(7, 'Your reservation in Paris is confirmed', true),
-(3, 'New reservation for your Cancun house', false),
-(9, 'Your reservation in Cancun is confirmed', false),
-(1, 'New user registration: Host Five', true);
+INSERT INTO notifications (user_id, type, message, is_read) VALUES
+(2, 'RESERVATION_STATUS', 'New reservation for your Paris apartment', false),
+(7, 'RESERVATION_STATUS', 'Your reservation in Paris is confirmed', true),
+(3, 'RESERVATION_STATUS', 'New reservation for your Cancun house', false),
+(9, 'RESERVATION_STATUS', 'Your reservation in Cancun is confirmed', false),
+(1, 'SYSTEM', 'New user registration: Host Five', true);
