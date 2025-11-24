@@ -50,11 +50,15 @@ export class AdminReservationsComponent implements OnInit {
     });
   }
 
-  confirm(id: number) {
-      this.reservationService.confirmReservation(id).subscribe(() => this.loadReservations());
+  confirm(id: number | undefined) {
+      if (id) {
+        this.reservationService.confirmReservation(id).subscribe(() => this.loadReservations());
+      }
   }
 
-  cancel(id: number) {
-      this.reservationService.cancelReservation(id).subscribe(() => this.loadReservations());
+  cancel(id: number | undefined) {
+      if (id) {
+        this.reservationService.cancelReservation(id).subscribe(() => this.loadReservations());
+      }
   }
 }
