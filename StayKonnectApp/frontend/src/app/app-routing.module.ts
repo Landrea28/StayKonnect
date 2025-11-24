@@ -21,6 +21,7 @@ const routes: Routes = [
   { path: 'my-reservations', component: MyReservationsComponent, canActivate: [AuthGuard] },
   { path: 'messages/:userId', component: ChatComponent, canActivate: [AuthGuard] },
   { path: 'properties/:id', component: PropertyDetailComponent },
+  { path: 'admin', loadChildren: () => import('./features/admin/admin.module').then(m => m.AdminModule), canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' }
 ];
 

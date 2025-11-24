@@ -20,6 +20,10 @@ public class NotificationService {
     @Autowired
     private UserRepository userRepository;
 
+    public List<Notification> getAllNotifications() {
+        return notificationRepository.findAll();
+    }
+
     public List<Notification> getUserNotifications(Long userId) {
         return notificationRepository.findByUserIdOrderByCreatedAtDesc(userId);
     }

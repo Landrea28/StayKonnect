@@ -16,6 +16,11 @@ public class NotificationController {
     @Autowired
     private NotificationService notificationService;
 
+    @GetMapping
+    public List<Notification> getAllNotifications() {
+        return notificationService.getAllNotifications();
+    }
+
     @GetMapping("/user/{userId}")
     public List<Notification> getUserNotifications(@PathVariable Long userId) {
         return notificationService.getUserNotifications(userId);

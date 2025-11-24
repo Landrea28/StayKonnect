@@ -45,6 +45,10 @@ public class ReservationService {
         return reservationRepository.findByPropertyId(propertyId);
     }
 
+    public List<Reservation> getAllReservations() {
+        return reservationRepository.findAll();
+    }
+
     @Transactional
     public Reservation createReservation(Long guestId, Long propertyId, Reservation reservationRequest) {
         User guest = userRepository.findById(guestId)

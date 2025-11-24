@@ -31,6 +31,11 @@ public class ReservationController {
         return reservationService.getReservationsByProperty(propertyId);
     }
 
+    @GetMapping
+    public List<Reservation> getAllReservations() {
+        return reservationService.getAllReservations();
+    }
+
     @PostMapping
     public ResponseEntity<Reservation> createReservation(
             @RequestParam Long guestId,

@@ -49,13 +49,17 @@ export class LoginComponent {
         password: this.f['password'].value
     })
     .subscribe({
-      next: () => {
-        this.router.navigate([this.returnUrl]);
-      },
-      error: error => {
-        this.error = error.error ? error.error.message : 'Login failed';
-        this.loading = false;
-      }
+        next: (user) => {
+            if (user.role === 'ADMIN') {
+                this.router.navigate(['/admin']);
+            } else {
+                this.router.navigate([this.returnUrl]);
+            }
+        },
+        error: error => {
+            this.error = error.error ? error.error.message : 'Login failed';
+            this.loading = false;
+        }
     });
   }
 }

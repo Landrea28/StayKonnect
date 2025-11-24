@@ -23,6 +23,10 @@ export class NotificationService {
     ).subscribe();
   }
 
+  getAllNotifications(): Observable<Notification[]> {
+    return this.http.get<Notification[]>(this.apiUrl);
+  }
+
   getUserNotifications(): Observable<Notification[]> {
     const user = this.authService.currentUserValue;
     if (!user) return new BehaviorSubject([]).asObservable();
